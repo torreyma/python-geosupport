@@ -1,8 +1,10 @@
 ## python-geosupport-test-stuff.py
-## Last modified: 2023-05-01 17:11
+## Last modified: 2023-05-02 11:58
 
 ## This stuff from python-geosupport documentation: 
 ## https://python-geosupport.readthedocs.io/en/latest/
+
+## Be sure to set environment variables first. See MT-local-lib-config-commands.sh*
 
 
 ## Basic usage:
