@@ -1,5 +1,5 @@
 MT-install-notes.md
-Last modified: 2023-05-04 12:22
+Last modified: 2023-05-04 12:56
 
 # MT's install notes for python-geosupport
 * This repo is forked from Ian Shiland's. Look there for the original.
@@ -35,8 +35,16 @@ There are two ways to do this depending on what you have access to on your Linux
 ## Running:
 * Before running, you have to set the environment variables GEOFILES and LD_LIBRARY_PATH so python-geosupport knows where geosupport was unzipped. 
 	* (Unless geosupport releases some kind of major changes that fundamentally break how it works, this is ALL you have to do to upgrade to a newer version of geosupport used with python-geosupport.)
-* Run python (often ```python3``` on the command line for many systems.)
-	* If you get the error: ``` geosupport.error.GeosupportError: libgeo.so: cannot open shared object file: No such file or directory ``` that just means you haven't set your environment variables or haven't set them correctly.
+* Run python interactively (often ```python3``` on the command line for many systems.)
+* In python, import the library with ``` from geosupport import Geosupport ```
+	* Tricky thing to watch out for: 
+		* If you get the error ``` ModuleNotFoundError: No module named 'geosupport' ``` then python doesn't think python-geosupport is installed.
+		* You may have installed it wrong. But you also need to be sure you are using pythong from anaconda. On some systems, like the DOHMH server, there can be more than one version of python3 installed
+		* Check you are using anaconda's python with ``` which python3 ``` --- it should show python3 being in /opt/anaconda/bin/python3 not /usr/bin or anywhere else.
+		* If you discover you are using /usr/bin/python3 then you are probably in a non-login shell that is not sourcing the system bashrc (/etc/bashrc) where python3 is set to the anaconda version.
+		* (For me this manifested in vim :terminal, but this problem could crop up other places. It does look like terminal on Jupyterhub is login though.)
+* Create a geosupport object called 'g' with  ``` g = Geosupport() ```
+	* Another tricky thing to watch out for: if at this point you get the error: ``` geosupport.error.GeosupportError: libgeo.so: cannot open shared object file: No such file or directory ``` that just means you haven't set your environment variables or haven't set them correctly.
 		* (Ignore the warning about 64 bit-ness, that's irrelevant.)
 
 
