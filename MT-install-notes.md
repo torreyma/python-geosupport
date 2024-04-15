@@ -1,5 +1,5 @@
 MT-install-notes.md
-Last modified: 2023-05-04 12:56
+Last modified: 2024-04-15 14:14
 
 # MT's install notes for python-geosupport
 * This repo is forked from Ian Shiland's. Look there for the original.
@@ -39,7 +39,7 @@ There are two ways to do this depending on what you have access to on your Linux
 * In python, import the library with ``` from geosupport import Geosupport ```
 	* Tricky thing to watch out for: 
 		* If you get the error ``` ModuleNotFoundError: No module named 'geosupport' ``` then python doesn't think python-geosupport is installed.
-		* You may have installed it wrong. But you also need to be sure you are using pythong from anaconda. On some systems, like the DOHMH server, there can be more than one version of python3 installed
+		* You may have installed it wrong. But you also need to be sure you are using python from anaconda. On some systems, like the DOHMH server, there can be more than one version of python3 installedm, and the system version can be old and/or missing a important bits.
 		* Check you are using anaconda's python with ``` which python3 ``` --- it should show python3 being in /opt/anaconda/bin/python3 not /usr/bin or anywhere else.
 		* If you discover you are using /usr/bin/python3 then you are probably in a non-login shell that is not sourcing the system bashrc (/etc/bashrc) where python3 is set to the anaconda version.
 		* (For me this manifested in vim :terminal, but this problem could crop up other places. It does look like terminal on Jupyterhub is login though.)
