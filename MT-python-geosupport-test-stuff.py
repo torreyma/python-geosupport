@@ -1,5 +1,5 @@
 ## python-geosupport-test-stuff.py
-## Last modified: 2023-05-03 16:09
+## Last modified: 2024-04-23 16:46
 
 ## This stuff from python-geosupport documentation: 
 ## https://python-geosupport.readthedocs.io/en/latest/
@@ -23,25 +23,25 @@ result = g.address(house_number=125, street_name='Worth St', borough_code='Mn')
 # them either through python object attribute notation or dictionary item
 # notation:
 
-    # Different ways of calling function 3S which processes street stretches
-    # g.street_stretch(...)
-    # g['street_stretch'](...)
-    # g['3S'](...)
-    # g.call({'function': '3S', ...})
-    # g.call(function='3S', ...)
-    # You can pass arguments as a dictionary, keyword arguments.
+# Different ways of calling function 3S which processes street stretches
+# g.street_stretch(...)
+# g['street_stretch'](...)
+# g['3S'](...)
+# g.call({'function': '3S', ...})
+# g.call(function='3S', ...)
+# You can pass arguments as a dictionary, keyword arguments.
 
-    # Use a dictionary with short names
-    g.street_stretch({'borough_code': 'MN', 'on': '1 Av', 'from': '1 st', 'to': '2 st'})
-    # Use keyword arguments with short names
-    g.street_stretch(borough_code='MN', street_name_1='1 Av', street_name_2='1 st', street_name_3='9 st')
-    # Use dictionary with full names
-    g.street_stretch({
-        'Borough Code-1': 'MN',
-        'Street Name-1': '1 Av',
-        'Street Name-2': '1 st',
-        'Street Name-3': '9 st'
-    })
+# Use a dictionary with short names
+g.street_stretch({'borough_code': 'MN', 'on': '1 Av', 'from': '1 st', 'to': '2 st'})
+# Use keyword arguments with short names
+g.street_stretch(borough_code='MN', street_name_1='1 Av', street_name_2='1 st', street_name_3='9 st')
+# Use dictionary with full names
+q.street_stretch({
+    'Borough Code-1': 'MN',
+    'Street Name-1': '1 Av',
+    'Street Name-2': '1 st',
+    'Street Name-3': '9 st'
+})
 
 ## Mode
 # A number of Geosupport functions support several modes: Exetended, Long, and

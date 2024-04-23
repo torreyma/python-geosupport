@@ -1,5 +1,5 @@
 MT-install-notes.md
-Last modified: 2024-04-15 14:14
+Last modified: 2024-04-23 16:50
 
 # MT's install notes for python-geosupport
 * This repo is forked from Ian Shiland's. Look there for the original.
@@ -35,6 +35,8 @@ There are two ways to do this depending on what you have access to on your Linux
 ## Running:
 * Before running, you have to set the environment variables GEOFILES and LD_LIBRARY_PATH so python-geosupport knows where geosupport was unzipped. 
 	* (Unless geosupport releases some kind of major changes that fundamentally break how it works, this is ALL you have to do to upgrade to a newer version of geosupport used with python-geosupport.)
+    * (For some reason I have trouble getting these variables to work on fish. If you are getting the "libgeo.so: cannot open shared object file" error (see below) and you are running fish with your variables (supposedly) set, try running in bash (and setting variables), at least for testing purposes. 
+    * ```MT-local-lib-config-commands.sh``` SHOULD set the variables for you (in bash), but seems like it doesn't. Try copying and pasting the export commands to set the variables. (Check with ```echo $GEOFILES``` as usual.)
 * Run python interactively (often ```python3``` on the command line for many systems.)
 * In python, import the library with ``` from geosupport import Geosupport ```
 	* Tricky thing to watch out for: 
